@@ -1,0 +1,6 @@
+This is a test
+file with some words
+like Süße and Straße.
+This is a test for words with
+apostrophes like don't
+and well-known.
