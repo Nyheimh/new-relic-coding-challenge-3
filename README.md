@@ -32,7 +32,7 @@ Output:
 
 Example
 node index.js text/intro.txt
-
+```
 │ (index) │ sequence │ count │
 | 0 │ 'welcome to my' │ 7 │
 │ 1 │ 'to my nr' │ 5 │
@@ -61,7 +61,8 @@ node index.js text/intro.txt
 │ 24 │ 'to welcome to' │ 1 │
 │ 25 │ 'nr code challenge' │ 1 │
 │ 26 │ 'code challenge welcome' │ 1 │
-│ 27 │ 'challenge welcome to' │ 1 ```
+│ 27 │ 'challenge welcome to' │ 1
+```
 
 ### Requirements
 
@@ -96,7 +97,3 @@ Adding Github Actions for CI/CD when changes are pushed to the branch, Jest will
 ### Bugs? and Issues?
 
 There were no known issues that presented themselves.
-
-```
-
-```
