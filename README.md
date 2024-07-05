@@ -92,13 +92,15 @@ This project uses GitHub Actions for CI/CD. When changes are pushed to the branc
 - [x] The program can process large files efficiently. Consider memory consumption and speed, especially if handling 1,000 Moby Dicks at once.
 - [x] The program handles Unicode characters (e.g., the ü in Süsse or ß in Straße).
 
-## Future Enhancements (What would you do next, given more time)
+## Future Enhancements 
+- (What would you do next, given more time)
 
 - Regex has limitations, after user testing, I realized there were missing edge cases such as the missing apostrophe, which needed to add extra lines. In addition, to the partial
   matching when coming across dashes/hyphens (-) or (/n) focuses on edge cases to bypass. The limitations of regex made some complexities that needed to be accounted for.
 - As this program stands, fully incorporating docker into the project to create a container for the program.
 - Add a performance metric in Jest tests to measure the program's efficiency.
 
-## Known Issues (Bug and Issues)
+## Known Issues 
+- (Bug and Issues)
 
 There are no known issues at this time.
