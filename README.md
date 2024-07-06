@@ -20,6 +20,20 @@ This project uses JavaScript for simplicity, ease of use, and to meet requiremen
 
 ### Getting Started
 
+Clone repo (if Github)
+
+- HTTPS
+```bash
+git clone https://github.com/Nyheimh/new-relic-coding-challenge-3.git
+```
+or
+
+```bash
+Download Zip 
+```
+
+
+
 Ensure installations are active:
 
 ```bash
@@ -33,6 +47,13 @@ node index.js text/intro.txt
 node index.js text/moby_dick.txt
 node index.js text/counting.txt
 node index.js text/unicode.txt
+```
+
+To run all four text files: 
+
+```bash
+node index.js text/intro.txt text/counting.txt text/unicode.txt text/moby_dick.txt
+
 ```
 
 Example output for `node index.js text/intro.txt`:
@@ -101,7 +122,7 @@ This project uses GitHub Actions for CI/CD. When changes are pushed to the branc
 - (What would you do next, given more time)
 
 - Regex has limitations, after user testing, I realized there were missing edge cases such as the missing apostrophe, which needed to add extra lines. In addition, to the partial matching when coming across dashes/hyphens (-) or (/n) focuses on edge cases to bypass. The limitations of regex made some complexities that needed to be accounted for.
-- As this program stands, fully incorporating Docker into the program the program.
+- As this program stands, incorporating Docker for efficiency and scalablity.
 - Add a performance metric in Jest tests to measure the program's efficiency.
 
 ## Known Issues
