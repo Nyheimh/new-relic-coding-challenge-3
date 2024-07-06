@@ -3,15 +3,16 @@ const readline = require("readline");
 
 function isFullWord(word) {
   return (
-    word.length > 1 &&
-    /^[\p{L}]+(['-][\p{L}]+)*$/u.test(word) &&
-    !/^\d+$/.test(word)
+    word.length > 0 &&
+    word.replace(/-/g, "").match(/^\p{L}[\p{L}'-]*$/u) !== null
   );
 }
 
 function extractThreeWordSequences(text) {
   let textWithSpaces = text.replace(/\n/g, " ");
-  let removeApostropheText = textWithSpaces.replace(/\s'/g, "'");
+  let removeApostropheText = textWithSpaces.replace(/(\w)'\s(\w)/g, "$1'$2");
+  removeApostropheText = removeApostropheText.replace(/[--]/g, "");
+
   const textFix = removeApostropheText
     .toLowerCase()
     .replace(/[^\p{L}\s]+/gu, "")
@@ -30,6 +31,7 @@ function extractThreeWordSequences(text) {
       sequences[sequence] = (sequences[sequence] || 0) + 1;
     }
   }
+
   return sequences;
 }
 
@@ -73,7 +75,8 @@ async function main() {
 
     rl.on("close", () => {
       const sequences = extractThreeWordSequences(text);
-      printTopSequences(sequences);
+      const topSequences = printTopSequences(sequences);
+      console.table(topSequences);
     });
   } else {
     const filePaths = process.argv.slice(2);
@@ -94,13 +97,16 @@ async function main() {
 function printTopSequences(sequences) {
   const sortedSequences = Object.entries(sequences)
     .sort((a, b) => b[1] - a[1])
-    .slice(0, 100);
+    .slice(0, 100)
+    .map(([sequence, count]) => ({ sequence, count }));
 
   return sortedSequences;
 }
 
 module.exports = {
   isFullWord,
+  extractThreeWordSequences,
+  processFile,
   testEnvironment: "node",
   setupFiles: ["<rootDir>/jest.setup.js"],
 };
